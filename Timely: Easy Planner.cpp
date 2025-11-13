@@ -110,3 +110,22 @@ void updateEvent() {
         cout << "You have no event for this date.\n";
     }
 }
+
+void deleteEvent() {
+    string date; 
+    cout << "Enter the date of the event to delete (YYYY-MM-DD): ";
+    getline(cin, date);
+
+    for (int i = 0; i < eventCount; i++) {
+        if (events[i].date == date) { 
+            for (int j = i; j < eventCount - 1; j++) {
+                events[j] = events[j + 1];
+            }
+            eventCount--; 
+            cout << "Event deleted successfully!\n";
+            return; 
+        }
+    }
+    cout << "You have no event for this date.\n";
+}
+
