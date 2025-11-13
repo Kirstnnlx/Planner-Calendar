@@ -126,5 +126,4 @@ void deleteEvent() {
             return; 
         }
     }
-    cout << "You have no event for this date.\n";
 }
