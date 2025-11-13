@@ -86,27 +86,3 @@ void viewEvents() {
     }
 }
 
-void updateEvent() {
-    string date;
-    cout << "Enter the date of the event to update (YYYY-MM-DD): ";
-    getline (cin, date);
-
-    bool found = false;
-    for (int i = 0; i < eventCount; i++) {
-        if (events[i].date == date) {
-            cout << "\nUpdating Event " << i + 1 << "\n";
-            cout << "Current Title: " << events[i].title << "\n";
-            cout << "Enter new title: ";
-            getline(cin, events[i].title); 
-            cout << "Current Description: " << events[i].description << "\n";
-            cout << "Enter new description: ";
-            getline(cin, events[i].description); 
-            cout << "Event updated successfully!\n";
-            found = true; 
-            break;
-        }
-    }
-    if (!found) { 
-        cout << "You have no event for this date.\n";
-    }
-}
